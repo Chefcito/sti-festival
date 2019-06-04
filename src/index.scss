@@ -7,7 +7,11 @@
 // Components
 @import './components/Home/home';
 @import './components/NavBar/nav-bar';
+@import './components/KNNFriends/knn-friends';
+@import './components/GuestList/guest-list';
+@import './components/Guest/guest';
 
 body {
     margin: 0;
+    font-family: 'Thasadith', sans-serif;
 }

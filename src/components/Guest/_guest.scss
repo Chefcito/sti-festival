@@ -1,0 +1,12 @@
+.guest {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding: .1em 1em;
+    background: $gray-1;
+
+    &__name {
+        color: white;
+    }
+}

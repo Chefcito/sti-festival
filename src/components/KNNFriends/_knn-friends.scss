@@ -1,0 +1,43 @@
+.knn-friends {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__main-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 90%;
+        height: 85%;
+
+        &__list-container {
+            width: 40%;
+            height: 100%;
+
+            &__h3 {
+                font-size: 1.2em;
+                font-weight: 100;
+            }
+
+            &__hr {
+                width: 100%;
+                margin-bottom: 1em;
+                border: none;
+                border-bottom: .5px solid $gray-1;
+            }
+
+            &__guest-list {
+                height: 70%;
+            }
+        }
+    
+        &__detail-container {
+            width: 55%;
+            height: 100%;
+            background: green;
+        }
+    }
+}
