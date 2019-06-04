@@ -2,6 +2,7 @@
   "name": "sti-festival",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chefcito.github.io/sti-festival",
   "dependencies": {
     "@types/jest": "24.0.13",
     "@types/mathjs": "^5.0.1",
@@ -11,6 +12,7 @@
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.3",
     "fs": "^0.0.1-security",
+    "gh-pages": "^2.0.1",
     "mathjs": "^5.10.3",
     "mobx": "^5.9.4",
     "mobx-react": "^6.0.2",
@@ -24,6 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

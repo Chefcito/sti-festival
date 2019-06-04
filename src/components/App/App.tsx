@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Router>
+        <Router basename="/sti-festival">
           <Switch>   
             <Route path="/" component={ Home } exact />
             <Route path="/KNNFriends" component={ KNNFriends } exact />
