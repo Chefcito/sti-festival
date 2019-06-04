@@ -2,7 +2,7 @@
   "name": "sti-festival",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chefcito.github.io/sti-festival",
+  "homepage": "https://chefcito.github.io/sti-festival/",
   "dependencies": {
     "@types/jest": "24.0.13",
     "@types/mathjs": "^5.0.1",
