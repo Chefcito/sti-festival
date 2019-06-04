@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { observer } from 'mobx-react';
+
 import Home from '../Home/Home';
 import KNNFriends from '../KNNFriends/KNNFriends';
 import CreateFestival from '../CreateFestival/CreateFestival';
 import Music from '../Music/Music';
 
+import Storage from '../../storage/storage'
+
 class App extends Component {
   constructor(props: {}){
     super(props);
+  }
+  
+  componentDidMount() {
+    Storage.getGuests();
+      setTimeout(() => {
+        Storage.setGuests();
+      }, 2000);
   }
 
   render() {
@@ -26,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default observer(App);

@@ -10,6 +10,7 @@ class Guest extends Component {
         return (
         <div className="guest">
             <p className="guest__name">{this.props.name}</p>
+            <p className="guest__age">{this.props.age}</p>
         </div>
         );
     }
