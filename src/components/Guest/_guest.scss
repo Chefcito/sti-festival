@@ -1,17 +1,39 @@
 .guest {
+    transition: all .3s ease; 
     box-sizing: border-box;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: .1em 3em;
     background: $gray-1;
 
-    &__name {
-        color: white;
+    &__image {
+        width: 12%;
+
+        &__img {
+            width: 100%;
+        }
     }
 
-    &__age {
-        color: white;
+    &__info {        
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 80%;
+
+        &__name {
+            color: white;
+        }
+        
+        &__age {
+            color: white;
+        }
     }
+}
+
+.guest:hover {
+    transition: all .3s ease; 
+    transform: translateX(5px);
 }

@@ -15,31 +15,50 @@ class KNNFriends extends Component {
             <h3 className="knn-friends__main-container__list-container__h3">Selecciona a una persona de la lista</h3>
             <hr className="knn-friends__main-container__list-container__hr"/>
             <GuestList className="knn-friends__main-container__list-container__guest-list" guests={Storage.guestList} />
-            {/* <GuestList className="knn-friends__main-container__list-container__guest-list"
-            guests={[{name: "Nataly Ruiz", age: 23},
-            {name: "Jorge Eliecer", age: 23},
-            {name: "Maria Paula Zea", age: 22},
-            {name: "Lina", age: 25},
-            {name: "Valentina", age: 20},
-            {name: "Camila Sanchez", age: 22},
-            {name: "Daniela Epe", age: 27},
-            {name: "Jonathan Esteban Arias", age: 22},
-            {name: "Maria del Mar", age: 20},
-            {name: "Valentina Gonzalez", age: 23},
-            {name: "Juan David Holgín", age: 20},
-            {name: "David Stiven Ceballos", age: 19},
-            {name: "Andrea Reyes", age: 21},
-            {name: "Viviana Sierra", age: 20},
-            {name: "Nicolas Martinez", age: 20},
-            {name: "Alejandro Salazar", age: 19},
-            {name: "Mauricio Botero Vallejo", age: 20},
-            {name: "Estefanía Montaña", age: 20},
-            {name: "Gabriel", age: 20},
-            {name: "Oscar", age: 21}]} /> */}
           </div>
 
           <div className="knn-friends__main-container__detail-container">
+            <div className="knn-friends__main-container__detail-container__guest">
+              <img className="knn-friends__main-container__detail-container__guest__img" src={require('../../resources/images/profile/' + '5' + '.png')} alt=""/>
+              <h2 className="knn-friends__main-container__detail-container__guest__name">Maria Paula Zea</h2>
 
+              <div className="knn-friends__main-container__detail-container__guest__preferences">
+                <table className="knn-friends__main-container__detail-container__guest__preferences__table">
+                  <tr className="knn-friends__main-container__detail-container__guest__preferences__table__tr-titles">
+                    <th className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Comidas</th>
+                    <th className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Bebidas</th>
+                    <th className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Géneros</th>
+                    <th className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Artistas</th>
+                  </tr>
+
+                  <tr className="knn-friends__main-container__detail-container__guest__preferences__table__tr">
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Hamburguesa</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Cerveza</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Pop</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Maroon 5</td>
+                  </tr>
+
+                  <tr className="knn-friends__main-container__detail-container__guest__preferences__table__tr">
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Asados</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Vino</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Trap</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Adele</td>
+                  </tr>
+
+                  <tr className="knn-friends__main-container__detail-container__guest__preferences__table__tr">
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Postres</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Té</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Bachata</td>
+                    <td className="knn-friends__main-container__detail-container__guest__preferences__table__tr__td">Aventura</td>
+                  </tr>
+                </table>
+              </div>
+
+              <h2 className="knn-friends__main-container__detail-container__guest__KNN-title">Vecinos cercanos</h2>
+              <div className="knn-friends__main-container__detail-container__guest__KNN-guests">
+                <GuestList className="knn-friends__main-container__detail-container__guest__KNN-guests__guest-list" guests={Storage.guestListKNN}/>
+              </div>
+            </div>
           </div>
         </div>
       </div>

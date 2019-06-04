@@ -1,6 +1,7 @@
 import { observable, action, toJS, values } from 'mobx';
 import * as papaparse from 'papaparse';
 import * as mathjs from 'mathjs'
+import { number } from 'prop-types';
 
 export type guest = { name: string};
 export type guestArray = { guest : guest }[];
@@ -10,14 +11,27 @@ class Storage {
     @observable database: any = [];
     @observable labels: any = [];
     @observable guestList: any = [];
+    @observable guestListKNN: any = [];
+    @observable guestListAlgorithm1: any = [];
+    @observable guestListAlgorithm2: any = [];
+
+    @observable currentKNNGuestId : number = -1;
+
+    @observable currentGuestInDetail : any;
 
     constructor() {
-        this.profileImages = ["../resources/images/profile/1.png", "../resources/images/profile/2.png"]
+        this.profileImages = ["../resources/images/profile/1.png", "../resources/images/profile/2.png", "../resources/images/profile/3.png", "../resources/images/profile/4.png", "../resources/images/profile/5.png", "../resources/images/profile/6.png", "../resources/images/profile/7.png", "../resources/images/profile/8.png", "../resources/images/profile/9.png", "../resources/images/profile/10.png", "../resources/images/profile/11.png", "../resources/images/profile/12.png", "../resources/images/profile/13.png", "../resources/images/profile/14.png", "../resources/images/profile/15.png", "../resources/images/profile/16.png"]
         this.database = [];
         this.guestList = [];
+        this.guestListKNN = [];
+        this.guestListAlgorithm1 = [];
+        this.guestListAlgorithm2 = [];
+
+        this.currentKNNGuestId = 3;
 
         this.getData = this.getData.bind(this);
         this.setGuests = this.setGuests.bind(this);
+        this.setCurrentKNNGuestId = this.setCurrentKNNGuestId.bind(this);
     }
 
     @action fetchCsv() {
@@ -75,32 +89,52 @@ class Storage {
 
     @action setGuests() {
         if(this.database.length === 0) {
-            alert("fuck");
             return;
         }
         if(this.database) {
             this.labels = this.database[0];
-            console.log(toJS(this.database[0]));
-            console.log(toJS(this.database[0][0]));
+            //console.log(toJS(this.database[0]));
+            //console.log(toJS(this.database[0][0]));
             this.database.forEach((element: any, index : any) => {
                 //alert("yei");
                 //console.log(toJS(element) );
                 //console.log(element[0]);
+                    let random = Math.floor(Math.random() * (this.profileImages.length)  + 1);
                     var userData = {
+                        id: index,
                         name: toJS(element[0]),
                         age: toJS(element[1]),
-                        id: index,
+                        imageId: '' + random,
+                        selected: false,
                     }
                     //console.log(userData.id);
                     if(index != 0)
                     this.guestList.push(userData);  
-    
-                
-                 for(let i = 0; i < this.guestList.length; i++) {
-                   //console.log(this.guestList[i]);
-                } 
+
+                    if(index > 10 && index < 15)
+                    this.guestListKNN.push(userData);
+
+                    if(index > 21 && index < 29)
+                    this.guestListAlgorithm1.push(userData);
+
+                    if(index > 49 && index < 57 )
+                    this.guestListAlgorithm2.push(userData);
+
+                 /*for(let i = 0; i < this.guestList.length; i++) {
+                   console.log(this.guestList[i]);
+                 }*/ 
             });
         }
+    }
+
+    @action setCurrentGuestInDetail() {
+        let id : any = this.currentKNNGuestId;
+        //this.currentGuestInDetail = this.getGuests[id];
+    }
+
+    @action setCurrentKNNGuestId(id : number) {
+        this.currentKNNGuestId = id;        
+        alert(this.currentKNNGuestId);
     }
 }
 
